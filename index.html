@@ -15,121 +15,120 @@ background:#ffffff;
 color:#1d1d1f;
 }
 
-/* ANIMACIÓN */
-.fade{
-opacity:0;
-transform:translateY(20px);
-animation:fadeIn 1s ease forwards;
-}
-@keyframes fadeIn{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
 /* HERO */
 .hero{
-padding:70px 20px;
+padding:40px 15px;
 background:#f5f5f7;
-text-align:center;
 }
 
-.side-img{
-width:150px;
-margin:10px auto;
-display:block;
+.hero-content{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:40px;
+flex-wrap:nowrap;
+max-width:1000px;
+margin:auto;
 }
 
 /* CENTRO */
 .center-content{
-max-width:320px;
-margin:auto;
+text-align:center;
+max-width:300px;
 }
 
 .logo{
-width:110px;
-border-radius:16px;
+width:120px;
 margin-bottom:10px;
+border-radius:16px;
 }
 
-h1{
+.center-content h1{
 font-size:28px;
 margin:0;
 font-weight:600;
 }
 
-.sub{
+.center-content .sub{
 font-size:14px;
 color:#6e6e73;
 }
 
-p{
+.center-content p{
 font-size:16px;
 color:#6e6e73;
+margin:10px 0 20px;
 }
 
 /* BOTONES */
 .hero-buttons{
-margin-top:15px;
 display:flex;
 justify-content:center;
-gap:12px;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .btn{
 padding:12px 22px;
-border-radius:25px;
+border-radius:20px;
+text-decoration:none;
 font-size:14px;
 font-weight:500;
-text-decoration:none;
-transition:0.3s;
 }
 
-.btn-primary{
-background:#0071e3;
-color:white;
-box-shadow:0 4px 15px rgba(0,113,227,0.3);
+.btn-primary{background:#0071e3;color:white;}
+.btn-secondary{border:1px solid #0071e3;color:#0071e3;}
+
+/* IMÁGENES */
+.side-img{
+width:180px;
+object-fit:contain;
 }
 
-.btn-primary:hover{
-transform:scale(1.05);
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
 }
 
-.btn-secondary{
-border:1px solid #0071e3;
-color:#0071e3;
+.side-img{
+width:120px;
 }
 
-.btn-secondary:hover{
-background:#0071e3;
-color:white;
+.center-content{
+max-width:100%;
+}
+
 }
 
 /* SECCIONES */
 section{
-padding:20px;
+padding:20px 15px;
 display:grid;
-grid-template-columns:1fr;
+grid-template-columns:1fr 1fr;
 gap:15px;
+}
+
+@media(max-width:768px){
+section{
+grid-template-columns:1fr;
+}
 }
 
 .card{
 background:#f5f5f7;
+margin:12px 0;
 padding:20px;
-border-radius:22px;
+border-radius:20px;
 text-align:center;
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
-transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-5px);
-}
+h2{font-size:20px;margin-bottom:10px;font-weight:600;}
+p,li{font-size:15px;color:#6e6e73;line-height:1.5;}
 
-h2{
-margin-bottom:10px;
-}
+ul{padding-left:0;list-style-position:inside;}
 
 /* GALERÍA */
 .gallery{
@@ -144,7 +143,7 @@ height:100px;
 object-fit:cover;
 border-radius:14px;
 cursor:pointer;
-transition:0.3s;
+transition: all .25s ease;
 }
 
 .gallery img:hover{
@@ -156,18 +155,24 @@ transform:scale(1.08);
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px;
-margin-top:10px;
+margin-top:12px;
+}
+
+.compare img{
+width:100%;
+height:120px;
+object-fit:cover;
+border-radius:12px;
 }
 
 /* MODAL */
 .modal{
 display:none;
 position:fixed;
-top:0;
-left:0;
+top:0;left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,.9);
 justify-content:center;
 align-items:center;
 }
@@ -191,29 +196,27 @@ font-size:28px;
 color:#fff;
 line-height:60px;
 text-decoration:none;
-box-shadow:0 6px 20px rgba(0,0,0,0.2);
 }
 
-/* FOOTER */
 footer{
 text-align:center;
-padding:25px;
-color:#86868b;
+padding:30px 10px;
 font-size:13px;
+color:#86868b;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero fade">
+<div class="hero">
+<div class="hero-content">
 
 <img src="iphone.png" class="side-img">
 
 <div class="center-content">
 <img src="logo.jpg" class="logo">
-<h1>M&A MobileCare+</h1>
-<div class="sub">Center</div>
+<h1>M&A MobileCare+ <span class="sub">Center</span></h1>
 <p>Reparación profesional de iPhone y Android</p>
 
 <div class="hero-buttons">
@@ -225,19 +228,19 @@ font-size:13px;
 <img src="samsung.png" class="side-img">
 
 </div>
+</div>
 
-<section class="fade">
+<section>
 <div class="card">
 <h2>Sobre nosotros</h2>
-<p>Somos especialistas en reparación avanzada de dispositivos móviles,
-enfocados en microcomponentes electrónicos.</p>
+<p>Somos especialistas en reparación avanzada de dispositivos móviles, enfocados en microcomponentes electrónicos.</p>
 </div>
 
 <div class="card">
 <h2>Nuestro Objetivo</h2>
 <ul>
 <li>Prolongar la vida útil</li>
-<li>Evitar reemplazos</li>
+<li>Evitar reemplazo completo</li>
 <li>Soluciones técnicas</li>
 <li>Servicio rápido</li>
 </ul>
@@ -248,9 +251,9 @@ enfocados en microcomponentes electrónicos.</p>
 <ul>
 <li>Tarjetas lógicas</li>
 <li>Microsoldadura</li>
-<li>Pantallas</li>
-<li>Baterías</li>
+<li>Pantallas y baterías</li>
 <li>Puerto de carga</li>
+<li>Microcomponentes</li>
 </ul>
 </div>
 
@@ -261,9 +264,8 @@ enfocados en microcomponentes electrónicos.</p>
 </div>
 </section>
 
-<section id="galeria" class="fade">
+<section id="galeria">
 <div class="card">
-
 <h2>Trabajos realizados</h2>
 
 <div class="gallery">
